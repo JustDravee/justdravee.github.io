@@ -6,7 +6,7 @@ order: 4
 
 GM! or HM! (iykyk)
 
-I'm Dravee. You may've seen me here and there. I identify as a deep-blue dinosaur.
+I'm Dravee. You may've seen me here and there. I identify as a deep-blue dinosaur... somehow.
 
 I'm a Lead Security Researcher at Certora and also a Scout & Judge on code4rena.
 
