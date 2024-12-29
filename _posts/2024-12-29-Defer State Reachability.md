@@ -5,16 +5,30 @@ categories: [creativity, speed_boost, finding_bugs]
 
 ---
 
-The idea is in this tweet: https://x.com/BowTiedDravee/status/1872741659164983656
+The idea is in [this tweet](https://x.com/BowTiedDravee/status/1872741659164983656): 
 
-> Tip: defer state reachability.
-> Treating state reads and read-only external calls as input parameters can uncover bad paths early (and is easy on Fuzzers/FV tools).
-> By doing this on sensitive functions, you can quickly understand what's needed for a vulnerability to actually exist
+<img width="645" alt="image" src="https://github.com/user-attachments/assets/b7893383-d22a-406b-8c12-b76deb273f2b" />
 
-However, a tweet being short, it was a bit confusing and a follow-up description was given: https://x.com/BowTiedDravee/status/1873097615883288719
+However, a tweet being short, it was a bit confusing:
 
-> You find a weakness ("if this is possible => rekt") before exploring existing paths potentially leading to the exploit fr
-> A bit like the Certora Prover (over-approximating initial states / ext calls are "havoks" i.e can do anything (revert, edit states, return unexpected values))
+<img width="613" alt="image" src="https://github.com/user-attachments/assets/97e66d44-84eb-49a0-a8dc-abce1fe2bdbd" />
 
-However, the most amazing description came from Antonio Viggiano's ChatGPT prompt which did an amazing job at explaining what I tried to explain: https://chatgpt.com/share/67706907-399c-8012-8075-8c983895bb1f
+So, a follow-up description was given: 
+
+<img width="645" alt="image" src="https://github.com/user-attachments/assets/be0ea4db-3253-41d7-8a6a-697dc9f82775" />
+
+Then, **an amazing description** came from [Antonio Viggiano](https://x.com/agfviggiano)'s ChatGPT prompt. I couldn't have explained this better. It did an amazing job understanding the insights I tried to fit in a tweet:
+
+![image](https://github.com/user-attachments/assets/a3f373a2-0e2d-4a1b-b407-4d6edc16bd90)
+
+![image](https://github.com/user-attachments/assets/1a0a14ce-df50-4b2b-aeb0-a21473cf216f)
+
+![image](https://github.com/user-attachments/assets/19779fb9-4bf2-4177-b675-3af632331f68)
+
+![image](https://github.com/user-attachments/assets/8125bbf8-9762-45c5-b298-5a7db1c71fd6)
+
+To me, this tip actually belongs to the "creativity" category as getting assumptions on reads is quite easy (and will close your mind). 
+
+The speed boost is due thanks to the better direction of effort.
+
 
