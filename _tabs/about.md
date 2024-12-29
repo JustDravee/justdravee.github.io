@@ -10,4 +10,14 @@ I'm Dravee. You may've seen me here and there. I identify as a deep-blue dinosau
 
 I'm a Lead Security Researcher at Certora and also a Scout & Judge on code4rena.
 
-Just trying to make this space more secure by sharing my own views here!
+Have you noticed how auditing is so incredibly hard?  
+
+The breadth of knowledge you need is immense, and the skill to apply it effectively is even harder to grasp. 
+
+Plateauing is quite common and staying stuck at the junior level for years may happen.
+
+Here, I share practical advice, hard-earned insights, and lessons from my own journey as a security researcher. Perhaps this could help you.
+
+Good luck in your own journey!
+
+Dravee
