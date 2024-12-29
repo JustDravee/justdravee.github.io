@@ -27,8 +27,8 @@ Then, **an amazing description** came from [Antonio Viggiano](https://x.com/agfv
 
 ![image](https://github.com/user-attachments/assets/8125bbf8-9762-45c5-b298-5a7db1c71fd6)
 
-To me, this tip actually belongs to the "creativity" category as getting assumptions on reads is quite easy (and will close your mind). 
+To me, this tip actually belongs to the "creativity" category as getting assumptions on reads is quite easy (and will close your mind). This here will keep you looking for bad paths without assuming that they "can't be reached". Also, if they can't be reached for now, a future code change could make it happen, therefore you could still submit a suggestion in how to harden the code. 
 
-The speed boost is due thanks to the better direction of effort.
+The speed boost is thanks to the better direction of effort.
 
 
