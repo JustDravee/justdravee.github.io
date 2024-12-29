@@ -17,7 +17,7 @@ So, a follow-up description was given:
 
 <img width="645" alt="image" src="https://github.com/user-attachments/assets/be0ea4db-3253-41d7-8a6a-697dc9f82775" />
 
-Then, **an amazing description** came from [Antonio Viggiano](https://x.com/agfviggiano)'s ChatGPT prompt. I couldn't have explained this better. It did an amazing job understanding the insights I tried to fit in a tweet:
+Then, **an amazing description** came from [Antonio Viggiano](https://x.com/agfviggiano)'s [ChatGPT prompt](https://chatgpt.com/share/67706907-399c-8012-8075-8c983895bb1f). I couldn't have explained this better. It did an amazing job understanding the insights I tried to fit in a tweet:
 
 ![image](https://github.com/user-attachments/assets/a3f373a2-0e2d-4a1b-b407-4d6edc16bd90)
 
