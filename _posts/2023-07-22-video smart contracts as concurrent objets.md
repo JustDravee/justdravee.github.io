@@ -5,7 +5,7 @@ categories: [video, insight, visualization]
 
 ---
 
-Original tweet: https://x.com/BowTiedDravee/status/1682712824391368713
+Original tweet: [https://x.com/BowTiedDravee/status/1682712824391368713](https://x.com/BowTiedDravee/status/1682712824391368713)
 
 <img width="880" alt="image" src="https://github.com/user-attachments/assets/a74e9edb-a489-4cbd-aa3d-f861876a9816" />
 
