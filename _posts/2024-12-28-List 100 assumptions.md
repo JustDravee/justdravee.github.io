@@ -5,7 +5,9 @@ categories: [state_machine, perspective, finding_bugs]
 
 ---
 
-I've been getting questions about assumptions vs invariants, since the following [tweet](https://x.com/BowTiedDravee/status/1872445723985539427). 
+I've been getting questions about assumptions vs invariants, since the following [tweet](https://x.com/BowTiedDravee/status/1872445723985539427):
+
+<img width="880" alt="image" src="https://github.com/user-attachments/assets/9e333a44-af97-4e6c-a901-e1a3459b4ac0" />
 
 ChatGPT provided, surprisingly, a good list (not exhaustive by any means of course but the coverage is quite wide and can give some nice ideas):
 
