@@ -1,7 +1,7 @@
 ---
 title: "Tip: MermaidJS and ChatGPT"
 date: 2023-12-06
-categories: [tip, productivity, visualization]
+categories: [tips, productivity, visualization]
 
 ---
 
