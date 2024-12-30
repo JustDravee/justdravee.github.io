@@ -5,7 +5,7 @@ categories: [tips, critical_thinking, mindset]
 
 ---
 
-Original tweet: https://x.com/BowTiedDravee/status/1752710044896928193
+Original tweet: [https://x.com/BowTiedDravee/status/1752710044896928193](https://x.com/BowTiedDravee/status/1752710044896928193)
 
 <img width="880" alt="image" src="https://github.com/user-attachments/assets/22752677-d6ce-4b72-83d2-e8135e351a6e" />
 
