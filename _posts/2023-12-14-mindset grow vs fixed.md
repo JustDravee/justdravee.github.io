@@ -5,7 +5,7 @@ categories: [mindsets, reporting, severity-categorization]
 
 ---
 
-Original tweet: https://x.com/BowTiedDravee/status/1735152378184138813
+Original tweet: [https://x.com/BowTiedDravee/status/1735152378184138813](https://x.com/BowTiedDravee/status/1735152378184138813)
 
 Link: https://online.hbs.edu/blog/post/growth-mindset-vs-fixed-mindset
 
