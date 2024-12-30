@@ -1,7 +1,7 @@
 ---
 title: "Tip: extension tab for Solidity Visual Developer"
 date: 2024-02-09
-categories: [productivity, tips, speed_boost]
+categories: [tips, productivity, speed_boost]
 
 ---
 

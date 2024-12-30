@@ -1,7 +1,7 @@
 ---
 title: "Tip: Feynman learning strategy in THREE points"
 date: 2024-12-30
-categories: [learning, tips, feynman]
+categories: [tips, learning, feynman]
 
 ---
 

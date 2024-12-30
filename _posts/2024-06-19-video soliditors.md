@@ -1,7 +1,7 @@
 ---
 title: "Vidéo (French): Soliditors - Interview avec Dravee"
 date: 2024-06-19
-categories: [slice-of-life, video, interview, youtube]
+categories: [video, slice-of-life, interview, youtube]
 
 ---
 

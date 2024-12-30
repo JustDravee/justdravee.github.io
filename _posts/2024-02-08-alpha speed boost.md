@@ -1,7 +1,7 @@
 ---
 title: "Alpha alert: Speed boost"
 date: 2024-02-08
-categories: [speed_boost, efficiency, shortcuts, tips]
+categories: [tips, speed_boost, efficiency, shortcuts]
 
 ---
 

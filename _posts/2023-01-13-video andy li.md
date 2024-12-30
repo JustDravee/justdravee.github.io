@@ -1,7 +1,7 @@
 ---
 title: "Video: Andy Li - Interview with Dravee"
 date: 2023-01-13
-categories: [slice-of-life, video, interview, youtube]
+categories: [video, slice-of-life, interview, youtube]
 
 ---
 

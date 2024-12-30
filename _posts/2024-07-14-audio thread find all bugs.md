@@ -1,7 +1,7 @@
 ---
 title: "Audit + Thread: How to find all the bugs in code review"
 date: 2024-07-14
-categories: [mindsets, finding_bugs, audio, daniel-von-fange]
+categories: [audio, mindsets, finding_bugs, daniel-von-fange]
 
 ---
 

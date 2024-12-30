@@ -1,7 +1,7 @@
 ---
 title: "Video: Johnny Time - Interview with Dravee"
 date: 2023-06-20
-categories: [slice-of-life, video, interview, youtube]
+categories: [video, slice-of-life, interview, youtube]
 
 ---
 

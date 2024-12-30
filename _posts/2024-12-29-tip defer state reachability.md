@@ -1,7 +1,7 @@
 ---
 title: "Tip: Defer State Reachability"
 date: 2024-12-29
-categories: [creativity, speed_boost, finding_bugs, tips]
+categories: [tips, creativity, speed_boost, finding_bugs]
 
 ---
 

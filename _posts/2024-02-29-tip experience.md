@@ -1,7 +1,7 @@
 ---
 title: "Tip: 20 years of experience vs 1 year of experience 20 times"
 date: 2024-02-29
-categories: [experience, learning, tips]
+categories: [tips, experience, learning]
 
 ---
 

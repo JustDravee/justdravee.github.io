@@ -1,7 +1,7 @@
 ---
 title: "Tip: Thinking of Smart Contracts as concurrent objects/threads"
 date: 2023-07-22
-categories: [tips, video, insight, visualization]
+categories: [video, tips, insight, visualization]
 
 ---
 
