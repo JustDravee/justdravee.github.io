@@ -16,7 +16,9 @@ The breadth of knowledge you need is immense, and the skill to apply it effectiv
 
 Plateauing is quite common and staying stuck at the junior level for years may happen.
 
-Here, I share practical advice, hard-earned insights, and lessons from my own journey as a security researcher. Perhaps this could help you.
+Here, I share practical advice, hard-earned insights, and lessons from my own journey as a security researcher. 
+
+Perhaps this could help you.
 
 Good luck in your own journey!
 
