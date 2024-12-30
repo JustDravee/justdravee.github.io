@@ -13,6 +13,10 @@ Original tweet: https://x.com/BowTiedDravee/status/1727975381418803703
 
 New: Bonus from WhiteHatMage that I like: 
 
+- https://x.com/WhiteHatMage/status/1834185564964176229 and https://x.com/WhiteHatMage/status/1841457118060204107
+
 <img width="880" alt="image" src="https://github.com/user-attachments/assets/fc79cf26-7873-4c42-855f-284655ff1188" />
+
+- https://x.com/WhiteHatMage/status/1838282097204539490
 
 <img width="880" alt="image" src="https://github.com/user-attachments/assets/6f8a0817-32f1-4a30-a325-6b81fb0ffd7c" />
