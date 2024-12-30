@@ -1,6 +1,6 @@
 ---
 title: "Thread: State Machine"
-date: 2024-02-29
+date: 2024-02-09
 categories: [state_machine, perspective, finding_bugs, thread]
 
 ---

@@ -1,6 +1,6 @@
 ---
 title: "Quote I like: Question it until it breaks"
-date: 2024-02-29
+date: 2024-02-09
 categories: [quote, finding_bugs, mindset]
 
 ---
