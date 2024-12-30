@@ -5,6 +5,6 @@ categories: [tips, learning]
 
 ---
 
-Original tweet: https://x.com/BowTiedDravee/status/1763272726611906886
+Original tweet: [https://x.com/BowTiedDravee/status/1763272726611906886](https://x.com/BowTiedDravee/status/1763272726611906886)
 
 <img width="880" alt="image" src="https://github.com/user-attachments/assets/4d8cde98-6843-4f0b-b236-8e7863154632" />
