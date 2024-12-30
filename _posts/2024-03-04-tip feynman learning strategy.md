@@ -1,9 +1,9 @@
 ---
 title: "Tip: Feynman learning strategy in THREE points"
-date: 2024-02-29
+date: 2024-12-30
 categories: [learning, tips, feynman]
 
 ---
 
-Original tweet: https://x.com/ProfFeynman/status/1764519604976525656
+Original tweet: https://x.com/BowTiedDravee/status/1873656991262077190
 
