@@ -5,7 +5,7 @@ categories: [quote, mindset]
 
 ---
 
-Original tweet: https://x.com/BowTiedDravee/status/1751950690367267203
+Original tweet: [https://x.com/BowTiedDravee/status/1751950690367267203](https://x.com/BowTiedDravee/status/1751950690367267203)
 
 <img width="818" alt="image" src="https://github.com/user-attachments/assets/1e012e76-091d-4537-ac99-4d965c21d777" />
 
