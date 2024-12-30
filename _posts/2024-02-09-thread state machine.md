@@ -1,7 +1,7 @@
 ---
-title: "State Machine: My Own Perspective"
+title: "Thread: State Machine"
 date: 2024-12-29
-categories: [state_machine, perspective, finding_bugs]
+categories: [state_machine, perspective, finding_bugs, thread]
 
 ---
 
