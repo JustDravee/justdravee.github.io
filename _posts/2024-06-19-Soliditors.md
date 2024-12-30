@@ -5,6 +5,6 @@ categories: [slice-of-life, video, interview, youtube]
 
 ---
 
-[Dravee, Security Researcher chez Certora - Soliditors #7](https://youtu.be/yl25Rf0BKnw?si=pDT86DOjVGvf2wWM)
+[Dravee, Security Researcher chez Certora](https://www.youtube.com/watch?v=yl25Rf0BKnw)
 
-{% include embed/youtube.html id='pDT86DOjVGvf2wWM' %}
+{% include embed/youtube.html id='yl25Rf0BKnw' %}
