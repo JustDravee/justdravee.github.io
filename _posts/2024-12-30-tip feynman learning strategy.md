@@ -5,7 +5,7 @@ categories: [tips, learning, feynman]
 
 ---
 
-Original tweet: https://x.com/BowTiedDravee/status/1873656991262077190
+Original tweet: [https://x.com/BowTiedDravee/status/1873656991262077190](https://x.com/BowTiedDravee/status/1873656991262077190)
 
 <img width="883" alt="image" src="https://github.com/user-attachments/assets/a4c9b435-4e2e-4c72-9ff9-adf7b9320c55" />
 
