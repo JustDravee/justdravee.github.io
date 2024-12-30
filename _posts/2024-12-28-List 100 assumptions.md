@@ -1,7 +1,7 @@
 ---
 title: "List: 100 Assumptions That Could Lead to Bugs"
 date: 2024-12-29
-categories: [state_machine, perspective, finding_bugs]
+categories: [assumptions, perspective, finding_bugs, mindsets]
 
 ---
 
