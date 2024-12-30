@@ -1,7 +1,7 @@
 ---
 title: "Video: Mindsets of Auditing"
 date: 2023-06-09
-categories: [mindsets, finding_bugs]
+categories: [mindsets, finding_bugs, video, youtube]
 
 ---
 
