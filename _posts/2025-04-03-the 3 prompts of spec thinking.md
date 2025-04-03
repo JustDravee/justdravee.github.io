@@ -306,6 +306,7 @@ This turns path explosion into **targeted path tracing**.
      - Assume all inputs are evil (edge-cases)
    - Storage reads
      - Assume it can change at any time (especially before/after calls: "That balance you're reading? It might have changed. Are you relying on something staying the same?")
+     - First identify the bad states, then worry about actual state reachability. **By over-approximating**: you're staying focused on uncovering all threats, even unlikely ones.
    - External calls
      - Assume them to be chaotic liars. In the Certora Prover, the external calls are **Havoc** by default, meaning they can change any other state, can return unexpected values, can revert... this is **over-approximation** at its finest.
    - Call order or reentrancy
