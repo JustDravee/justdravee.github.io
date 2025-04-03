@@ -5,8 +5,6 @@ categories: [tips, insights, mindset]
 
 ---
 
-> Disclaimer: Of course the boring part of writing this was helped by AI. But the insights and guided prompts are mine. I do believe this can benefit the community.
-
 ## Introduction
 
 Smart contract auditing is often described as finding bugs in code (after all, a bug report is the expected output).
@@ -329,3 +327,5 @@ And hey, if you want to brute-force some assumptions? Use Fuzzing or Formal Veri
 Use the Three Prompts. Think in properties. Block the bad. Ship the audit. Secure the space.
 
 Cheers everyone!
+
+> Disclaimer: Of course the boilerplate and layout parts of this article was helped by AI. But the insights are entirely mine, and I edited this a lot.
