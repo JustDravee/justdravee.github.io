@@ -70,12 +70,7 @@ Bugs fall into **three categories**:
 The user’s expectations aren’t met—because the code doesn’t even support them.
 > Example: You can deposit money… but never withdraw. The protocol’s core logic isn’t there.
 
-```mermaid
-flowchart TD
-  subgraph AB["Developer Intention"]
-      DI((Actual Behavior))
-  end
-```
+<img width="244" alt="image" src="https://github.com/user-attachments/assets/57ed22ab-36c2-475f-80fa-9e2327454718" />
 
 This reflects a failure in **liveness**: something *good* was supposed to happen, but doesn’t.
 
@@ -91,12 +86,7 @@ Often caught through unit tests, these are straightforward to spot but easy to m
 The system does *more* than intended. Abusable edge cases, unsafe flows, and poorly scoped permissions emerge here.
 > Example: An attacker uses reentrancy to drain funds.
 
-```mermaid
-flowchart TD
-  subgraph AB["Actual Behavior"]
-      DI((Developer Intention))
-  end
-```
+<img width="244" alt="image" src="https://github.com/user-attachments/assets/5b346ecb-af8a-47c4-9dc6-8dfb5f7f5a71" />
 
 This is where your **threat modeling** kicks in the hardest.
 
