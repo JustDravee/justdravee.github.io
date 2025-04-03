@@ -312,7 +312,7 @@ This turns path explosion into **targeted path tracing**.
    - Call order or reentrancy
 4. Use the **Three Prompts** to challenge everything influencing that sink.
 
-**Use the prompts to filter important flows. Use sink-source to chase the dangerous ones.**
+**In summary; use the prompts to filter important flows. Use sink-source to chase the dangerous ones.**
 
 ## Final Insight
 
@@ -323,13 +323,15 @@ But your job *is* to:
 - Find where unsafe flows *could* happen
 - Suggest guards or blocks on weird-but-plausible paths
 
-Sometimes the impact isn’t clear yet. Bug bounty hunters sometimes spend days to maximize the impact after having found a bug.
+Sometimes the impact isn’t clear yet. Bug bounty hunters sometimes spend days to maximize the impact after having found a bug. So, it's an effort that costs time. If you're auditing: coverage is your friend.
 
 Remember: **your goal is to secure the protocol during the time you had to review it**.
 
-And hey, if you want to brute-force some assumptions? Use Fuzzing or Formal Verification tools!
+It's perfectly fine (and advisable) to maximize the impact when bug bounty hunting (but someone may frontrun your finding). It can also be a strategy during contests.
 
-Use the Three Prompts. Think in properties. Block the bad. Ship the audit. Secure the space.
+If you want to brute-force some assumptions: use Fuzzing or Formal Verification tools!
+
+TLDR: Use the Three Prompts. Think in properties. Make sure there's good stuff. Block the bad stuff. Ship the audit. Secure the space.
 
 Cheers everyone!
 
