@@ -117,12 +117,12 @@ If an attacker can exploit the contract to trigger any of these, you’re likely
 
 ## What are Properties and Invariants?
 
-### 🛡 Invariants
+### Invariants
 
 Statements that must *always* be true, regardless of how the contract is used.
 > “The total supply must always equal the sum of all user balances.”
 
-### ✅ Properties (aka Postconditions)
+### Properties (aka Postconditions)
 
 Assertions that should be true *after* a specific function or transition.
 > “After withdrawing, the user’s balance should decrease by the withdrawn amount.”
@@ -153,7 +153,7 @@ These are your **specs**—they represent how the system is *supposed* to behave
 
 ## Teachings from Formal Methods
 
-### ✅ **Liveness Properties** = *Design-Level expectations* or “Something good eventually happens.”
+### **Liveness Properties** = *Design-Level expectations* or “Something good eventually happens.”
 
 It's the **Design intentions** and **Implementation** layer.
 
@@ -165,14 +165,14 @@ These align with :
 - **What the developer intended** (happy paths).
 - **Missing or incorrectly implemented functionality.**
 
-🧠 These map to **Bug Categories 1 & 2**:
+These map to **Bug Categories 1 & 2**:
 
 1. **Missing functionality** (e.g., can't withdraw, can't claim rewards)  
 2. **Incorrect happy paths** (e.g., claims don't subtract balance, refunds miscalculated)
 
 👉 Try this cue: *"Eventually, X must happen."*
 
-### 🛡 **Safety Properties** = *Control-level guarantees* or “Nothing bad happens.”
+### **Safety Properties** = *Control-level guarantees* or “Nothing bad happens.”
 
 It's the **Enforcement layer**.
 
@@ -192,7 +192,7 @@ This is where most ideas for security-checks can be made. This is also where you
 
 👉 Try this cue: Start a sentence with *"Should only..."* or *"Should never..."*. Given that assumptions are conditions that are expected to be true, but aren't enforced by code: this here is where the implicit truths can be revealed explicitly, and thus can be checked for hidden bugs
 
-🔁 **Temporal Logic Thinking** = *Sequence/flow correctness*  
+### **Temporal Logic Thinking** = *Sequence/flow correctness*  
 
 A bit between both of the above.
 
