@@ -105,17 +105,21 @@ If an attacker can exploit the contract to trigger any of these, you’re likely
 
 ## What are Properties and Invariants?
 
+These are your **specs**—they represent how the system is *supposed* to behave.
+
 ### Invariants
 
-Statements that must *always* be true, regardless of how the contract is used.
+Statements that must *always* be true, regardless of how the contract is used (before and after any action).
 > “The total supply must always equal the sum of all user balances.”
+
+These need some specific invariant testing tools (Certora Prover, Halmos, Foundry's invariant tests, Echidna, etc.)
 
 ### Properties (aka Postconditions)
 
 Assertions that should be true *after* a specific function or transition.
 > “After withdrawing, the user’s balance should decrease by the withdrawn amount.”
 
-These are your **specs**—they represent how the system is *supposed* to behave.
+These can be covered by unit tests.
 
 ### Why Do They Matter?
 
