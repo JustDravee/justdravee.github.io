@@ -124,8 +124,8 @@ These can be covered by unit tests.
 ### Why Do They Matter?
 
 - **Bugs break them**: A false property = something’s wrong.
-- They help you reason about intent, not just code (Ever heard of code blindness? Ever heard of re-implementing functionalities your way to compare implementations?).
-- They’re easier to brainstorm than full path coverage.
+- They help you **reason about intent**, not just code (Ever heard of code blindness? Ever heard of re-implementing functionalities your way to compare implementations?).
+- They’re easier to **brainstorm** than full path coverage.
 - They work best when written in plain English first.
 - I'll say this again, PLAIN ENGLISH IS SEVERELY UNDERRATED. More on that right now.
 
@@ -133,7 +133,7 @@ These can be covered by unit tests.
 
 1. **High-level spec (Plain English)**: What should users be able to do?
    - “A user cannot lose funds unless they voluntarily withdraw or trade.”
-2. **Mid-level spec (State Machine Model):**: What state variables enable that behavior?
+2. **Mid-level spec (State Machine Model)**: What state variables enable that behavior?
    - Track states like `Deposited`, `Locked`, `Withdrawn`.
    - “From `Locked` → `Withdrawn` is only allowed if time has passed.”
 3. **Code-level spec**: What are the function-level conditions and transitions?
