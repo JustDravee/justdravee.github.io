@@ -312,7 +312,7 @@ This turns path explosion into **targeted path tracing**.
    - Call order or reentrancy
 4. Use the **Three Prompts** to challenge everything influencing that sink.
 
-**In summary: Use the "3 Prompts" to identify what’s worth looking at. Use "Sink-Source Thinking" to hunt down the critical paths.**
+**In summary: Use "Sink-Source Thinking" to hunt down the critical paths. Use the "3 Prompts" to identify what’s worth looking at.**
 
 ## Final Insight
 
