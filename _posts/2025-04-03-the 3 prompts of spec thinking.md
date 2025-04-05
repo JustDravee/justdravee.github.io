@@ -75,9 +75,14 @@ This reflects a failure in **liveness**: something *good* was supposed to happen
 ### 2. **Incorrect Happy Paths**
 
 The feature exists and runs, but it doesn’t behave correctly. Think of integration mistakes or faulty state transitions.
-> Example: A user can still receive rewards after being deleted.
+
+Think of it as "wrong result, right code path".
+
+> Example: Rewards are miscalculated due to rounding errors or state not updated correctly
 
 Often caught through unit tests, these are straightforward to spot but easy to miss in complex flows.
+
+**Post-publication clarification (thanks to thoughtful feedback from our CTO):** It can get quite confusing to distinguish between **"Incorrect Happy Paths"** and **"Unexpected Paths"** (more on that below). Try to think as **"Incorrect Happy Paths"** being **"Unexpected Data-Flows"**, while **"Unexpected Paths"** would be **"Unexpected Control-Flows"**. **"Missing Paths"** can be thought as **“expected entry point doesn’t exist.”**
 
 ### 3. **Unexpected Paths**
 
@@ -114,12 +119,22 @@ Statements that must *always* be true, regardless of how the contract is used (b
 
 These need some specific invariant testing tools (Certora Prover, Halmos, Foundry's invariant tests, Echidna, etc.)
 
-### Properties (aka Postconditions)
+### Properties (aka Functional Correctness Properties)
 
-Assertions that should be true *after* a specific function or transition.
+These define what should hold true after executing a specific function or state transition. They reflect **the intended behavior** of the protocol:
 > “After withdrawing, the user’s balance should decrease by the withdrawn amount.”
 
-These can be covered by unit tests.
+**Postconditions** are a common way to express functional correctness. However, to verify that the contract's behavior matches its intent, you may need to check multiple rules or invariants **together**.
+
+A full correctness property may require reasoning across multiple states and functions—often beyond the reach of unit tests.
+
+A "Functional Correctness Property" (commonly seen as a `rule` with the Certora Prover) can include:
+
+- Postconditions (see [assert, require](https://docs.certora.com/en/latest/docs/cvl/statements.html#assert-and-require) or [satisfy](https://docs.certora.com/en/latest/docs/cvl/statements.html#satisfy-statements) statements)
+- Assumed invariants within the function (see [requireInvariant](https://docs.certora.com/en/latest/docs/user-guide/patterns/require-invariants.html) statements)
+- Expected changes across multiple state variables (see [Tracking changes with ghosts and hooks](https://docs.certora.com/en/latest/docs/user-guide/ghosts.html#tracking-changes-with-ghosts-and-hooks))
+
+Together, they form the logic layer of the system’s **expected functionality**.
 
 ### Why Do They Matter?
 
@@ -163,6 +178,8 @@ These map to **Bug Categories 1 & 2**:
 2. **Incorrect happy paths** (e.g., claims don't subtract balance, refunds miscalculated)
 
 👉 Try this cue: *"Eventually, X must happen."*
+
+**Post-publication clarification (thanks to thoughtful feedback from our CTO):** Liveness is quite hard to prove (e.g. Solvency), but it's also one of the most interesting concepts. In Formal Verification, one tip that is often applicable is to reduce the problem to a set of safety properties.
 
 ### **Safety Properties** = *Control-level guarantees* or “Nothing bad happens.”
 
