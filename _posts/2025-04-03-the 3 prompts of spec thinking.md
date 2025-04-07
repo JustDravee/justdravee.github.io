@@ -345,8 +345,6 @@ Once you’ve identified a sink, work **backwards** from it:
 
 This turns **path explosion** into **a guided search for real threats**.
 
----
-
 #### **Key strategy**
 
 1. **List your sinks** — all spots where real-world value or critical control is affected.
