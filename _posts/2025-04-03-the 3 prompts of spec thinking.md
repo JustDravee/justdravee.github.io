@@ -83,8 +83,11 @@ Think of it as "wrong result, right code path".
 Often caught through unit tests, these are straightforward to spot but easy to miss in complex flows.
 
 **Post-publication clarification (thanks to thoughtful feedback from our CTO):** 
+
 It can get quite confusing to distinguish between **"Incorrect Happy Paths"** and **"Unexpected Paths"** (more on that below). 
+
 Try to think as **"Incorrect Happy Paths"** being **"Unexpected Data-Flows"**, while **"Unexpected Paths"** would be **"Unexpected Control-Flows"**. 
+
 **"Missing Paths"** can be thought as **“expected entry point doesn’t exist.”**
 
 ### 3. **Unexpected Paths**
@@ -182,7 +185,11 @@ These map to **Bug Categories 1 & 2**:
 
 👉 Try this cue: *"Eventually, X must happen."*
 
-**Post-publication clarification (thanks to thoughtful feedback from our CTO):** Liveness is quite hard to prove (e.g. Solvency), but it's also one of the most interesting concepts. In Formal Verification, one tip that is sometimes applicable is to reduce the problem to a set of safety properties.
+**Post-publication clarification (thanks to thoughtful feedback from our CTO):** 
+
+Liveness is quite hard to prove (e.g. Solvency), but it's also one of the most interesting concepts. 
+
+In Formal Verification, one tip that is sometimes applicable is to reduce the problem to a set of safety properties.
 
 ### **Safety Properties** = *Control-level guarantees* or “Nothing bad happens.”
 
@@ -197,8 +204,7 @@ These align with **Abusable Behaviors**:
 - **Unexpected paths and flows**
 
 These map to **Bug Category 3**:
-3. **The system can do more than it should**  
-   (e.g., double-claim, free rewards, theft via desync)
+- **The system can do more than it should** (e.g., double-claim, free rewards, theft via desync)
 
 This is where most ideas for security-checks can be made. This is also where you can get quite creative in tackling assumptions or inferring behaviors on rare code paths (e.g. downcast overflow etc.).
 
