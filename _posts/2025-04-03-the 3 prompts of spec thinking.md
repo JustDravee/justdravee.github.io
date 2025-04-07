@@ -30,7 +30,7 @@ Money, Power or Ownership given to a user.
 
 ### What's an ACTOR?
 
-An interactooor with a smart contract:
+Any interactooor with a smart contract:
 
 - Other protocols (dependencies)
 - Other users (permissioned or not)
@@ -50,7 +50,7 @@ An **action** is when an actor initiates interaction with the system. This trigg
 …and produces:
 
 - State changes (on the Smart Contract itself or on external dependencies, like balances)
-- Returned Values
+- Returned values
 - Either a success or a revert
 
 The flow may span multiple steps, touch multiple assets, or impact multiple actors.
@@ -82,7 +82,10 @@ Think of it as "wrong result, right code path".
 
 Often caught through unit tests, these are straightforward to spot but easy to miss in complex flows.
 
-**Post-publication clarification (thanks to thoughtful feedback from our CTO):** It can get quite confusing to distinguish between **"Incorrect Happy Paths"** and **"Unexpected Paths"** (more on that below). Try to think as **"Incorrect Happy Paths"** being **"Unexpected Data-Flows"**, while **"Unexpected Paths"** would be **"Unexpected Control-Flows"**. **"Missing Paths"** can be thought as **“expected entry point doesn’t exist.”**
+**Post-publication clarification (thanks to thoughtful feedback from our CTO):** 
+It can get quite confusing to distinguish between **"Incorrect Happy Paths"** and **"Unexpected Paths"** (more on that below). 
+Try to think as **"Incorrect Happy Paths"** being **"Unexpected Data-Flows"**, while **"Unexpected Paths"** would be **"Unexpected Control-Flows"**. 
+**"Missing Paths"** can be thought as **“expected entry point doesn’t exist.”**
 
 ### 3. **Unexpected Paths**
 
@@ -214,9 +217,11 @@ These properties help define when **liveness should occur**, and when **safety m
 
 ## The Three Prompts of Spec Thinking
 
-### 1. **What is expected?**
+### 1. **What is expected?** — Define Intended Behaviors (The Value Layer)
 
 👉 Try this cue: What *should* happen? What is the user *meant* to be able to do?
+
+You can read the comments, the docs (if they exist), the code itself, interfaces... and ask what the user or protocol should be able to do.
 
 Finds:
 
@@ -231,9 +236,11 @@ Finds:
 - Misimplemented logic
 - Incorrect or incomplete user flows
 
-### 2. **What is allowed?**
+### 2. **What is allowed?** — Explore Possible Paths and Inputs (The Possibility Layer)
 
-👉 Try this cue: What can the system be made to do—whether intended or not?
+👉 Try this cue: What can the system be made to do — whether intended or not?
+
+You start exploring what’s **possible**, not just what was intended (e.g., an unexpected path opened by a downcast overflow).
 
 Finds:
 
@@ -252,10 +259,23 @@ Finds:
 
 💡 There's a beautiful post from <https://x.com/0xCharlesWang> about the challenge of uncovering call paths here: <https://x.com/0xCharlesWang/status/1768004932936880273>
 
-### 3. **What was assumed but never enforced?**
+### 3. **What was assumed but never enforced?** — Write Your Properties (The Enforcement Layer)
 
 👉 Try this cue: What does the code *assume*, but never check?
 👉 Answer with "Should only..." or "Eventually, ... must happen"
+
+Now you flip into **spec thinking** mode:
+
+- What invariants or preconditions were silently relied upon?
+- Are there conditions the code assumes to be true but never checks?
+
+This is where you get precise and **start drafting properties**, invariants, or test rules to validate or break assumptions. You transition from questioning the system to **formally stating what must hold true**.
+
+Use this phase to build:
+
+- Properties (functional correctness)
+- Invariants (always-true conditions)
+- Flow assertions (e.g. ordering, permissions, thresholds)
 
 Finds:
 
@@ -276,20 +296,21 @@ Finds:
 
 ## Sink-Source Thinking: A Strategy for Using the Prompts
 
-> "But ser… path explosion is real!"
+> "But ser... path explosion is real!"
 
-Yep. That’s why we need **sink-source thinking**, an old gem samczsun mentioned for prioritizing the effort during audits or bug bounty hunting.
+Yep. That’s why we use **Sink-Source Thinking** — an old gem mentioned by samczsun — to **prioritize effort** during audits or bounty hunting.
+
+### What’s a Sink?
 
 Sinks are the **endpoints** of value movement or critical state transitions. They represent **the things you’re trying to protect**.
 
 These are the moments where:
+- **Assets can be stolen**
+- **State can be corrupted**
+- **Control can be hijacked**
+- **Trust can be broken**
 
-- Assets can be stolen
-- State can be corrupted
-- Control can be hijacked
-- Trust can be broken
-
-Examples of sinks:
+#### Common examples of sinks
 
 - Funds being transferred out
 - A user receives accounting-based rewards
@@ -300,36 +321,45 @@ Examples of sinks:
 
 > **If a mistake here causes financial loss, permanent lock, or protocol takeover — it’s a sink.**
 
-Why start with sinks? Because **you don’t have time to look at everything**.  
+### Why Start from Sinks?
 
-You don’t need to model the whole contract—you just need to ask:
+Because **you don’t have time to look at everything**.  
 
-> *What are the most catastrophic outcomes possible in this system?*
+You’re not here to simulate every code path — you’re here to ask:
 
-Then you trace **backward**:
+> *"What are the most catastrophic outcomes possible in this system?"*
+
+### Trace Backward from the Sink
+
+Once you’ve identified a sink, work **backwards** from it:
 
 - What inputs, state variables, or external calls **influence** that sink?
 - What assumptions are made before it’s triggered?
 - Are those assumptions **validated** or just **hoped for**?
 
-This turns path explosion into **targeted path tracing**.
+This turns **path explosion** into **a guided search for real threats**.
+
+---
 
 #### **Key strategy**
 
 1. **List your sinks** — all spots where real-world value or critical control is affected.
 2. **Ask: what could make this sink fire unsafely?**
 3. **Trace back** through:
-   - Input params
+   - **Input params**
      - Assume all inputs are evil (edge-cases)
-   - Storage reads
+   - **Storage reads**
      - Assume it can change at any time (especially before/after calls: "That balance you're reading? It might have changed. Are you relying on something staying the same?")
      - First identify the bad states, then worry about actual state reachability. **By over-approximating**: you're staying focused on uncovering all threats, even unlikely ones.
-   - External calls
-     - Assume them to be chaotic liars. In the Certora Prover, the external calls are **Havoc** by default, meaning they can change any other state, can return unexpected values, can revert... this is **over-approximation** at its finest.
-   - Call order or reentrancy
+   - **External calls**
+     - Assume them to be chaotic liars. In the Certora Prover, the external calls are [Havoc](https://docs.certora.com/en/latest/docs/cvl/statements.html#havoc-statements) by default, meaning they can change any other state, can return unexpected values, can revert... this is **over-approximation** at its finest.
+   - **Call order or reentrancy**
 4. Use the **Three Prompts** to challenge everything influencing that sink.
 
-**In summary: Use "Sink-Source Thinking" to hunt down the critical paths. Use the "3 Prompts" to identify what’s worth looking at.**
+#### **In summary:**
+
+1. **Use "Sink-Source Thinking" to guide your focus in identifying and hunting down the critical paths (the most impactful flows).** This is how you trade path explosion for precision.
+2. **Use the "Three Prompts" to uncover what can go wrong along the way.** This is how you turn hidden risks into concrete findings.
 
 ## Final Insight
 
@@ -340,15 +370,15 @@ But your job *is* to:
 - Find where unsafe flows *could* happen
 - Suggest guards or blocks on weird-but-plausible paths
 
-Sometimes the impact isn’t clear yet. Bug bounty hunters sometimes spend days to maximize the impact after having found a bug. So, it's an effort that costs time. If you're auditing: coverage is your friend.
+Sometimes the impact isn’t clear yet. Bug bounty hunters often spend days maximizing the impact after finding a bug. That level of depth takes time. If you're auditing: maximum coverage should be your aim.
 
 Remember: **your goal is to secure the protocol during the time you had to review it**.
 
-It's perfectly fine (and advisable) to maximize the impact when bug bounty hunting (but someone may frontrun your finding). It can also be a strategy during contests.
+It’s perfectly fine (and often strategic) to maximize impact when bug bounty hunting (but someone may frontrun you). It can also be a strategy during contests.
 
 If you want to brute-force some assumptions: use Fuzzing or Formal Verification tools!
 
-TLDR: Use the Three Prompts. Think in properties. Make sure there's good stuff. Block the bad stuff. Ship the audit. Secure the space.
+**TLDR: Start with what matters. Follow what’s possible. Catch what’s unsafe.**
 
 Cheers everyone!
 
