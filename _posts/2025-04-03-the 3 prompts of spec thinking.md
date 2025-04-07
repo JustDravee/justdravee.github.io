@@ -382,12 +382,10 @@ Sometimes the impact isn’t clear yet. Bug bounty hunters often spend days maxi
 
 Remember: **your goal is to secure the protocol during the time you had to review it**.
 
-It’s perfectly fine (and often strategic) to maximize impact when bug bounty hunting (but someone may frontrun you). It can also be a strategy during contests.
+It's perfectly fine (and often strategic) to maximize impact when bug bounty hunting (but someone may frontrun you). It can also be a strategy during contests.
 
 If you want to brute-force some assumptions: use Fuzzing or Formal Verification tools!
 
 **TLDR: Start with what matters. Follow what’s possible. Catch what’s unsafe.**
 
 Cheers everyone!
-
-> Disclaimer: Of course the boilerplate and layout parts of this article was helped by AI. But the insights are entirely mine, and I edited this a lot.
