@@ -367,6 +367,8 @@ This turns **path explosion** into **a guided search for real threats**.
 1. **Use "Sink-Source Thinking" to guide your focus in identifying and hunting down the critical paths (the most impactful flows).** This is how you trade path explosion for precision.
 2. **Use the "Three Prompts" to uncover what can go wrong along the way.** This is how you turn hidden risks into concrete findings.
 
+---
+
 ## Final Insight
 
 Of course, you won’t manually explore all paths. It's usually impossible, and you don’t have to.
