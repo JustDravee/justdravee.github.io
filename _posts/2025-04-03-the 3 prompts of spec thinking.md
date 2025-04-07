@@ -225,37 +225,46 @@ These properties help define when **liveness should occur**, and when **safety m
 
 ### 1. **What is expected?** — Define Intended Behaviors (The Value Layer)
 
-👉 Try this cue: What *should* happen? What is the user *meant* to be able to do?
+👉 Try this cue: "What *should* happen? What is the user *meant* to be able to do?"
 
-You can read the comments, the docs (if they exist), the code itself, interfaces... and ask what the user or protocol should be able to do.
+Start from the surface: interfaces, comments, docs (if you're lucky), and your own intuition
 
-Finds:
+What are the core promises of the system?
+
+What flows or features must exist for it to work?
+
+This sets the baseline: the **happy path** and the **expected outcomes**.
+
+🔍 Finds (spec/design level issues, meaning *what should exist but doesn't*):
 
 - Missing functionality
 - Broken happy paths
 - Failed integrations
 - Violated liveness properties
 
-🔍 Catches:
+🐛 Catches (actual bugs, meaning *what breaks at runtime*):
 
 - Missing state transitions
-- Misimplemented logic
+- Mis-implemented logic
 - Incorrect or incomplete user flows
 
 ### 2. **What is allowed?** — Explore Possible Paths and Inputs (The Possibility Layer)
 
-👉 Try this cue: What can the system be made to do — whether intended or not?
+👉 Try this cue: "What can the system be made to do — whether intended or not?"
 
-You start exploring what’s **possible**, not just what was intended (e.g., an unexpected path opened by a downcast overflow).
+You start exploring what’s **possible**, not just what was intended. You're hunting for **unexpected paths** (e.g., an unexpected path opened by a downcast overflow, an unexpected path opened by state manipulation before the user's call (frontrunning), an unexpected path opened by abused call orders or repeated calls...).
 
-Finds:
+This is how you uncover what’s **possible**, not just what was **intended**.
+
+🔍 Finds (spec/design level issues, meaning *what should exist but doesn't*):
 
 - Over-permissive flows
 - Missing require statements
 - Unsafe edge cases
+- State exposed to frontrunning or ordering risk
 - Violated safety properties
 
-🔍 Catches:
+🐛 Catches (actual bugs, meaning *what breaks at runtime*):
 
 - Incorrect input handling
 - Edge-case abuse
@@ -267,7 +276,7 @@ Finds:
 
 ### 3. **What was assumed but never enforced?** — Write Your Properties (The Enforcement Layer)
 
-👉 Try this cue: What does the code *assume*, but never check?
+👉 Try this cue: "What does the code *assume*, but never check?"
 👉 Answer with "Should only..." or "Eventually, ... must happen"
 
 Now you flip into **spec thinking** mode:
@@ -275,7 +284,7 @@ Now you flip into **spec thinking** mode:
 - What invariants or preconditions were silently relied upon?
 - Are there conditions the code assumes to be true but never checks?
 
-This is where you get precise and **start drafting properties**, invariants, or test rules to validate or break assumptions. You transition from questioning the system to **formally stating what must hold true**.
+This is where you get precise and **start drafting properties**, invariants, or test rules to validate or break assumptions. You transition from questioning the system to **formally stating what must hold true**. This is where the **implicit truths** get made **explicit**.
 
 Use this phase to build:
 
@@ -283,20 +292,20 @@ Use this phase to build:
 - Invariants (always-true conditions)
 - Flow assertions (e.g. ordering, permissions, thresholds)
 
-Finds:
+🔍 Finds (spec/design level issues, meaning *what should exist but doesn't*):
 
 - Implicit invariants
 - Precondition gaps (Insufficient bounds for input parameters, state variables, or external dependencies)
 - State desynchronization
 - Order-dependency bugs
 
-🔍 Catches:
+🐛 Catches (actual bugs, meaning *what breaks at runtime*):
 
 - Invariant violations
 - External/internal state mismatches
 - Missing guards on critical paths
 
-🧠 This is where your deepest bugs hide—and where your custom “checklist” builds itself naturally.
+🧠 This is where your deepest bugs hide—and where your custom "checklist" builds itself naturally.
 
 ---
 
@@ -326,6 +335,8 @@ These are the moments where:
 - Critical system variables are modified
 
 > **If a mistake here causes financial loss, permanent lock, or protocol takeover — it’s a sink.**
+
+👉 Try this cue: “If this goes wrong, what’s the worst that could happen?”
 
 ### Why Start from Sinks?
 
