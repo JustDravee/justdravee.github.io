@@ -204,7 +204,7 @@ These align with **Abusable Behaviors**:
 - **Unexpected paths and flows**
 
 These map to **Bug Category 3**:
-- **The system can do more than it should** (e.g., double-claim, free rewards, theft via desync)
+3. **The system can do more than it should** (e.g., double-claim, free rewards, theft via desync)
 
 This is where most ideas for security-checks can be made. This is also where you can get quite creative in tackling assumptions or inferring behaviors on rare code paths (e.g. downcast overflow etc.).
 
