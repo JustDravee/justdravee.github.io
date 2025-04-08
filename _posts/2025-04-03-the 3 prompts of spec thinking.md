@@ -225,15 +225,15 @@ These properties help define when **liveness should occur**, and when **safety m
 
 ### 1. **What is expected?** — Define Intended Behaviors (The Value Layer)
 
-👉 Try this cue: "What *should* happen? What is the user *meant* to be able to do?"
+👉 Try this cue: "What *should* happen? What is the system *supposed* to do? What is the user *meant* to be able to do?"
 
 Start from the surface: interfaces, comments, docs (if you're lucky)-and your own intuition.
 
-What are the core promises of the system?
+What are the core promised behaviors of the system?
 
 What flows or features need to be there for the system to work?
 
-This sets the baseline: the **happy path** and the **expected outcomes**.
+This sets the baseline: the **happy path** and the **liveness expectations**.
 
 🔍 Finds (spec/design level issues, meaning *what should exist but doesn't*):
 
@@ -317,7 +317,7 @@ Yep. That’s why we use **Sink-Source Thinking** — an old gem mentioned by sa
 
 ### What’s a Sink?
 
-Sinks are the **endpoints** of value movement or critical state transitions. They represent **the things you’re trying to protect**.
+Sinks are the **endpoints** of asset movement, permission changes or critical state transitions. They represent **the things you’re trying to protect**.
 
 These are the moments where:
 
@@ -357,6 +357,8 @@ Once you’ve identified a sink, work **backwards** from it:
 
 This turns **path explosion** into **a guided search for real threats**.
 
+👉 Try this cue: “How could this sink be triggered? What could reach it?”
+
 ### **Key strategy**
 
 1. **List your sinks** — all spots where real-world value or critical control is affected.
@@ -369,7 +371,7 @@ This turns **path explosion** into **a guided search for real threats**.
      - First identify the bad states, then worry about actual state reachability. **By over-approximating**: you're staying focused on uncovering all threats, even unlikely ones.
    - **External calls**
      - Assume them to be chaotic liars. In the Certora Prover, the external calls are [Havoc](https://docs.certora.com/en/latest/docs/cvl/statements.html#havoc-statements) by default, meaning they can change any other state, can return unexpected values, can revert... this is **over-approximation** at its finest.
-   - **Call order or reentrancy**
+   - **Call order/patterns** (reentrancy, timing, race conditions)
 4. Use the **Three Prompts** to challenge everything influencing that sink.
 
 ---
