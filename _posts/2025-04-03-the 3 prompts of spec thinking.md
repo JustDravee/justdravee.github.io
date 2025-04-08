@@ -357,7 +357,7 @@ Once you’ve identified a sink, work **backwards** from it:
 
 This turns **path explosion** into **a guided search for real threats**.
 
-#### **Key strategy**
+### **Key strategy**
 
 1. **List your sinks** — all spots where real-world value or critical control is affected.
 2. **Ask: what could make this sink fire unsafely?**
@@ -371,20 +371,6 @@ This turns **path explosion** into **a guided search for real threats**.
      - Assume them to be chaotic liars. In the Certora Prover, the external calls are [Havoc](https://docs.certora.com/en/latest/docs/cvl/statements.html#havoc-statements) by default, meaning they can change any other state, can return unexpected values, can revert... this is **over-approximation** at its finest.
    - **Call order or reentrancy**
 4. Use the **Three Prompts** to challenge everything influencing that sink.
-
-#### **In summary:**
-
-1. **Use "Sink-Source Thinking" to guide your focus in identifying and hunting down the critical paths (the most impactful flows).** This is how you trade path explosion for precision.
-2. **Use the "Three Prompts" to uncover what can go wrong along the way.** This is how you turn hidden risks into concrete findings.
-
-The **Audit Loop** is:
-
-1. Start with **what's expected**
-2. Identify the critical **sinks**
-3. Trace **what's allowed** — map all **levers of influence**
-4. Challenge assumptions by writing precise **properties**
-
-**Repeat. Refine. Uncover the truth.**
 
 ---
 
@@ -404,6 +390,20 @@ Remember: **your goal is to secure the protocol during the time you had to revie
 It's perfectly fine (and often strategic) to maximize impact when bug bounty hunting (but someone may frontrun you). It can also be a strategy during contests.
 
 If you want to brute-force some assumptions: use Fuzzing or Formal Verification tools!
+
+### **In summary:**
+
+1. **Use "Sink-Source Thinking" to guide your focus in identifying and hunting down the critical paths (the most impactful flows).** This is how you trade path explosion for precision.
+2. **Use the "Three Prompts" to uncover what can go wrong along the way.** This is how you turn hidden risks into concrete findings.
+
+The **Audit Loop** is:
+
+1. Start with **what's expected**
+2. Identify the critical **sinks**
+3. Trace **what's allowed** — map all **levers of influence**
+4. Challenge assumptions by writing precise **properties**
+
+**Repeat. Refine. Uncover the truth.**
 
 **TLDR: Start with what matters. Follow what’s possible. Catch what’s unsafe.**
 
