@@ -18,13 +18,13 @@ This article introduces a minimalist but powerful framework I came up with, resu
 
 ---
 
-## What's even a Smart Contract, from First Principles?
+## What Even *Is* a Smart Contract (From First Principles)?
 
 An **asset management system**, where **actors** interact to gain specific **benefits** through **actions**.
 
 ### What's an ASSET?
 
-Money, Power or Ownership given to a user.
+Money, power, or ownership assigned to a user.
 
 👉 Try this cue: *"If it's something that can be transferred, it's an asset."*.
 
@@ -59,7 +59,7 @@ The flow may span multiple steps, touch multiple assets, or impact multiple acto
 
 ---
 
-## What's even a Bug, from First Principles?
+## What Even *Is* a Bug (From First Principles)?
 
 Bugs fall into **three categories**:
 
@@ -82,11 +82,11 @@ Think of it as "wrong result, right code path".
 
 Often caught through unit tests, these are straightforward to spot but easy to miss in complex flows.
 
-**Post-publication clarification (thanks to thoughtful feedback from our CTO):** 
+**Post-publication clarification (thanks to thoughtful feedback from our CTO):**
 
-It can get quite confusing to distinguish between **"Incorrect Happy Paths"** and **"Unexpected Paths"** (more on that below). 
+It can get quite confusing to distinguish between **"Incorrect Happy Paths"** and **"Unexpected Paths"** (more on that below).
 
-Try to think as **"Incorrect Happy Paths"** being **"Unexpected Data-Flows"**, while **"Unexpected Paths"** would be **"Unexpected Control-Flows"**. 
+Try to think as **"Incorrect Happy Paths"** being **"Unexpected Data-Flows"**, while **"Unexpected Paths"** would be **"Unexpected Control-Flows"**.
 
 **"Missing Paths"** can be thought as **“expected entry point doesn’t exist.”**
 
@@ -101,7 +101,7 @@ This is where your **threat modeling** kicks in the hardest.
 
 ---
 
-## What’s even a Critical Severity Issue, from First Principles?
+## What Even *Is* a Critical Severity Issue (From First Principles)?
 
 A critical issue arises when **an asset is compromised**. Here are four key threat categories:
 
@@ -185,9 +185,9 @@ These map to **Bug Categories 1 & 2**:
 
 👉 Try this cue: *"Eventually, X must happen."*
 
-**Post-publication clarification (thanks to thoughtful feedback from our CTO):** 
+**Post-publication clarification (thanks to thoughtful feedback from our CTO):**
 
-Liveness is quite hard to prove (e.g. Solvency), but it's also one of the most interesting concepts. 
+Liveness is quite hard to prove (e.g. Solvency), but it's also one of the most interesting concepts.
 
 In Formal Verification, one tip that is sometimes applicable is to reduce the problem to a set of safety properties.
 
@@ -227,11 +227,11 @@ These properties help define when **liveness should occur**, and when **safety m
 
 👉 Try this cue: "What *should* happen? What is the user *meant* to be able to do?"
 
-Start from the surface: interfaces, comments, docs (if you're lucky), and your own intuition
+Start from the surface: interfaces, comments, docs (if you're lucky)-and your own intuition.
 
 What are the core promises of the system?
 
-What flows or features must exist for it to work?
+What flows or features need to be there for the system to work?
 
 This sets the baseline: the **happy path** and the **expected outcomes**.
 
@@ -245,7 +245,7 @@ This sets the baseline: the **happy path** and the **expected outcomes**.
 🐛 Catches (actual bugs, meaning *what breaks at runtime*):
 
 - Missing state transitions
-- Mis-implemented logic
+- Misimplemented logic
 - Incorrect or incomplete user flows
 
 ### 2. **What is allowed?** — Explore Possible Paths and Inputs (The Possibility Layer)
@@ -284,7 +284,7 @@ Now you flip into **spec thinking** mode:
 - What invariants or preconditions were silently relied upon?
 - Are there conditions the code assumes to be true but never checks?
 
-This is where you get precise and **start drafting properties**, invariants, or test rules to validate or break assumptions. You transition from questioning the system to **formally stating what must hold true**. This is where the **implicit truths** get made **explicit**.
+This is where you get precise and **start drafting properties**, invariants, or test rules to validate or break assumptions. You transition from questioning the system to **formally stating what must hold true**. This is where you surface the system's **implicit truths**-and make them **explicit**.
 
 Use this phase to build:
 
@@ -320,6 +320,7 @@ Yep. That’s why we use **Sink-Source Thinking** — an old gem mentioned by sa
 Sinks are the **endpoints** of value movement or critical state transitions. They represent **the things you’re trying to protect**.
 
 These are the moments where:
+
 - **Assets can be stolen**
 - **State can be corrupted**
 - **Control can be hijacked**
@@ -375,6 +376,15 @@ This turns **path explosion** into **a guided search for real threats**.
 
 1. **Use "Sink-Source Thinking" to guide your focus in identifying and hunting down the critical paths (the most impactful flows).** This is how you trade path explosion for precision.
 2. **Use the "Three Prompts" to uncover what can go wrong along the way.** This is how you turn hidden risks into concrete findings.
+
+The **Audit Loop** is:
+
+1. Start with **what's expected**
+2. Identify the critical **sinks**
+3. Trace **what's allowed** — map all **levers of influence**
+4. Challenge assumptions by writing precise **properties**
+
+**Repeat. Refine. Uncover the truth.**
 
 ---
 
