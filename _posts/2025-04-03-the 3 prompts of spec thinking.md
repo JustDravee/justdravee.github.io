@@ -180,8 +180,8 @@ These align with :
 
 These map to **Bug Categories 1 & 2**:
 
-1. **Missing functionality** (e.g., can't withdraw, can't claim rewards)  
-2. **Incorrect happy paths** (e.g., claims don't subtract balance, refunds miscalculated)
+> 1. **Missing functionality** (e.g., can't withdraw, can't claim rewards)  
+> 2. **Incorrect happy paths** (e.g., claims don't subtract balance, refunds miscalculated)
 
 👉 Try this cue: *"Eventually, X must happen."*
 
@@ -204,7 +204,7 @@ These align with **Abusable Behaviors**:
 - **Unexpected paths and flows**
 
 These map to **Bug Category 3**:
-3. **The system can do more than it should** (e.g., double-claim, free rewards, theft via desync)
+> 3. **The system can do more than it should** (e.g., double-claim, free rewards, theft via desync)
 
 This is where most ideas for security-checks can be made. This is also where you can get quite creative in tackling assumptions or inferring behaviors on rare code paths (e.g. downcast overflow etc.).
 
