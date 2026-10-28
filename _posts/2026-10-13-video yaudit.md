@@ -1,5 +1,5 @@
 ---
-title: "Vidéo (French): Soliditors - Interview avec Dravee"
+title: "Guest Speaker - yAudit Block 8: Thinking like an attacker"
 date: 2026-10-13
 categories: [video, guest-speaker, yAudit]
 
